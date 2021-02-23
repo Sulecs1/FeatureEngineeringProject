@@ -37,6 +37,7 @@ from matplotlib import pyplot as plt
 import pickle
 from helpers.data_prep import *
 from helpers.eda import *
+from helpers.helpers import *
 
 pd.pandas.set_option('display.max_columns', None)
 pd.set_option('display.float_format', lambda x: '%.3f' % x)
@@ -49,11 +50,49 @@ def load_application_train():
 df = load_application_train()
 df.head()
 
-#Burada oyuncunun kariyeri boyunca aldığı maaşa etki eden faktörler genel itibariyle aşağıdaki durumlardan etkilenir
+
+#Burada oyuncunun kariyeri boyunca aldığı maaşa(salary) etki eden faktörler genel itibariyle aşağıdaki durumlardan etkilenir
 #Years:Oyuncunun yıl deneyimi
 #CAtBat: Oyuncunun kariyeri boyunca sopa başına geçmesi.
 #CHits: Oyuncunun kariyeri boyunca toplam vuruş sayısı.
 #CRuns: Oyuncunun kariyeri boyunca yaptığı toplam sayı.
 #CRBI: Oyuncunun kariyeri boyunca vurucu görevindekiyen takıma kazandırdığı toplam puan.
 #CWalks: Oyuncunun kariyeri boyunca teknik faulden kazandığı toplam puan.
+
+
+grab_col_names(df)
+"""
+Observations: 322
+Variables: 20
+cat_cols: 3
+num_cols: 17
+cat_but_car: 0
+num_but_cat: 0
+Out[15]: 
+(['League', 'Division', 'NewLeague'],
+ [],
+ ['AtBat',
+  'Hits',
+  'HmRun',
+  'Runs',
+  'RBI',
+  'Walks',
+  'Years',
+  'CAtBat',
+  'CHits',
+  'CHmRun',
+  'CRuns',
+  'CRBI',
+  'CWalks',
+  'PutOuts',
+  'Assists',
+  'Errors',
+  'Salary'],
+ [])
+
+"""
+
+
+
+
 
