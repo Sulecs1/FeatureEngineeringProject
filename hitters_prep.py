@@ -122,6 +122,8 @@ df.loc[(df["Years"] > 8) & (df["Years"] <= 13), "Experience"] = "Normal"
 df.loc[(df["Years"] > 13) & (df["Years"] <= 18), "Experience"] = "Experienced"
 df.loc[(df["Years"] > 18), "Experience"] = "Vet"
 
+df_new = df.copy()
+df_new = df.drop(["AtBat", "Runs", "Division", "NewLeague", "HmRun", "Hits", "RBI", "League"], axis=1)
 
 
 
