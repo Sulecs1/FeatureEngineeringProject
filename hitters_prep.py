@@ -42,4 +42,18 @@ pd.pandas.set_option('display.max_columns', None)
 pd.set_option('display.float_format', lambda x: '%.3f' % x)
 pd.set_option('display.width', 170)
 
+def load_application_train():
+    data = pd.read_csv(r"C:\Users\Suleakcay\PycharmProjects\pythonProject6\data\hitters.csv")
+    return data
+
+df = load_application_train()
+df.head()
+
+#Burada oyuncunun kariyeri boyunca aldığı maaşa etki eden faktörler genel itibariyle aşağıdaki durumlardan etkilenir
+#Years:Oyuncunun yıl deneyimi
+#CAtBat: Oyuncunun kariyeri boyunca sopa başına geçmesi.
+#CHits: Oyuncunun kariyeri boyunca toplam vuruş sayısı.
+#CRuns: Oyuncunun kariyeri boyunca yaptığı toplam sayı.
+#CRBI: Oyuncunun kariyeri boyunca vurucu görevindekiyen takıma kazandırdığı toplam puan.
+#CWalks: Oyuncunun kariyeri boyunca teknik faulden kazandığı toplam puan.
 
