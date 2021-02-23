@@ -124,7 +124,7 @@ df.loc[(df["Years"] > 18), "Experience"] = "Vet"
 
 df_new = df.copy()
 df_new = df.drop(["AtBat", "Runs", "Division", "NewLeague", "HmRun", "Hits", "RBI", "League"], axis=1)
-
+num_cols = [col for col in df_new.columns if len(df_new[col].unique()) > 18 and  df_new[col].dtypes != "O"]
 
 
 
