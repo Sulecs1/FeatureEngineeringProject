@@ -108,13 +108,6 @@ df["RateRun"] = df["HmRun"] / df["Runs"] #(homerun vuruş sayısı/toplam yaptı
 df["RateHit"] = df["Hits"] / df["AtBat"]
 df["RateCHit"] = df["CHits"] / df["CAtBat"]
 
-#Salary etkileyen değişkenlerin yıla göre ortalamasını aldım
-#Years:Oyuncunun yıl deneyimi
-#CAtBat: Oyuncunun kariyeri boyunca sopa başına geçmesi.
-#CHits: Oyuncunun kariyeri boyunca toplam vuruş sayısı.
-#CRuns: Oyuncunun kariyeri boyunca yaptığı toplam sayı.
-#CRBI: Oyuncunun kariyeri boyunca vurucu görevindekiyen takıma kazandırdığı toplam puan.
-#CWalks: Oyuncunun kariyeri boyunca teknik faulden kazandığı toplam puan.
 
 df["Average_CAtBatYear"] = df["CAtBat"] / df["Years"]
 df["Average_CHitsYear"] = df["CHits"] / df["Years"]
@@ -122,6 +115,15 @@ df["Average_CRunsYear"] = df["CRuns"] / df["Years"]
 df["Average_CHmRunYear"] = df["CHmRun"] / df["Years"]
 df["Average_CRBIYear"] = df["CRBI"] / df["Years"]
 df["Average_CWalksYear"] = df["CWalks"] / df["Years"]
+
+df.loc[(df["Years"] <= 3), "Experience"] = "Elementary"
+df.loc[(df["Years"] > 3) & (df["Years"] <= 8), "Experience"] = "Beginning"
+df.loc[(df["Years"] > 8) & (df["Years"] <= 13), "Experience"] = "Normal"
+df.loc[(df["Years"] > 13) & (df["Years"] <= 18), "Experience"] = "Experienced"
+df.loc[(df["Years"] > 18), "Experience"] = "Vet"
+
+
+
 
 
 
