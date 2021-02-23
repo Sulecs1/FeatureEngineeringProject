@@ -131,7 +131,17 @@ df_new.shape #(322, 25)
 for col in num_cols:
     replace_with_thresholds(df_new, col) #tepe değerden büyük değer varsa tepe değeri ile değiştirme işlemi gerçekleştirdim
 
+#ONE-HOT ENCODING
 
+def one_hot_encoder(dataframe, categorical_cols, drop_first=False):
+    dataframe = pd.get_dummies(dataframe, columns=categorical_cols, drop_first=drop_first)
+    return dataframe
+
+ohe_cols = [col for col in df_new.columns if 10 >= len(df_new[col].unique()) > 2]
+
+one_hot_encoder(df_new, ohe_cols).head()
+
+one_hot_encoder(df_new, ohe_cols, drop_first=True).head()
 
 
 
