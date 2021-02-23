@@ -124,7 +124,14 @@ df.loc[(df["Years"] > 18), "Experience"] = "Vet"
 
 df_new = df.copy()
 df_new = df.drop(["AtBat", "Runs", "Division", "NewLeague", "HmRun", "Hits", "RBI", "League"], axis=1)
+
+#Aykırı değerler
 num_cols = [col for col in df_new.columns if len(df_new[col].unique()) > 18 and  df_new[col].dtypes != "O"]
+df_new.shape #(322, 25)
+for col in num_cols:
+    replace_with_thresholds(df_new, col) #tepe değerden büyük değer varsa tepe değeri ile değiştirme işlemi gerçekleştirdim
+
+
 
 
 
