@@ -38,4 +38,8 @@ import pickle
 from helpers.data_prep import *
 from helpers.eda import *
 
+pd.pandas.set_option('display.max_columns', None)
+pd.set_option('display.float_format', lambda x: '%.3f' % x)
+pd.set_option('display.width', 170)
+
 
