@@ -91,6 +91,20 @@ Out[15]:
  [])
 
 """
+check_df(df) #veriyi inceledik
+#shape :(322, 20)
+
+
+#Salary değişkenindeki eksik gözlemleri median değeri ile doldurdum
+df["Salary"]
+df["Salary"] = df["Salary"].fillna(df["Salary"].median())
+df.dropna(inplace=True)
+df.isnull().sum()
+
+
+
+
+
 
 
 
