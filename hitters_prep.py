@@ -16,6 +16,7 @@ Her ne kadar değişkenlerde açıklansada beyzbolun nasıl oynandığı hakkın
     * Salary: Oyuncunun dolar cinsinden maaşı.
     * NewLeague: Oyuncunun 1987 sezonu başındaki ligi.
 """
+#<<<Şule AKÇAY>>>
 
 import numpy as np
 import pandas as pd
