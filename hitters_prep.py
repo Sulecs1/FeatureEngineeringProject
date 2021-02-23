@@ -102,6 +102,13 @@ df.dropna(inplace=True)
 df.isnull().sum()
 
 
+df["RateCRun"] = df["CHmRun"] / df["CRuns"]
+df["RateRun"] = df["HmRun"] / df["Runs"] #(homerun vuruş sayısı/toplam yaptığı sayı)
+df["RateHit"] = df["Hits"] / df["AtBat"]
+df["RateCHit"] = df["CHits"] / df["CAtBat"]
+
+#Salary etkileyen değişkenlerin yıla göre ortalamasını aldım
+
 
 
 
